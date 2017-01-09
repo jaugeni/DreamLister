@@ -167,6 +167,7 @@
 				TargetAttributes = {
 					932020651E202CCE00EC3C63 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = P2GURVV2B3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -344,7 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P2GURVV2B3;
 				INFOPLIST_FILE = DreamLister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YauheniIvaniuk.DreamLister;
@@ -357,7 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = P2GURVV2B3;
 				INFOPLIST_FILE = DreamLister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YauheniIvaniuk.DreamLister;

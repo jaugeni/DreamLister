@@ -30,13 +30,16 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="DOX-WU-TZF"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="157" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WzT-IW-Zr0">
                                 <rect key="frame" x="20" y="132" width="374" height="604"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="ure-eK-llL" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="ure-eK-llL" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ure-eK-llL" id="0dp-ew-hrh">
@@ -163,13 +166,6 @@
                                     <constraint firstAttribute="width" constant="100" id="GYY-3a-Lcd"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPa-TK-7L6">
-                                <rect key="frame" x="20" y="72" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Tff-rR-Jla"/>
-                                    <constraint firstAttribute="width" constant="100" id="gNz-gR-9hz"/>
-                                </constraints>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="szL-11-5cg" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <rect key="frame" x="128" y="82" width="266" height="40"/>
                                 <color key="backgroundColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -225,6 +221,19 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.92146831750000002" green="0.92162626979999995" blue="0.92145836349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="T8p-MG-iLf" eventType="touchUpInside" id="SMq-7h-F0L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPa-TK-7L6">
+                                <rect key="frame" x="20" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Tff-rR-Jla"/>
+                                    <constraint firstAttribute="width" constant="100" id="gNz-gR-9hz"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="T8p-MG-iLf" eventType="touchUpInside" id="swk-aZ-aXB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,12 +264,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="9Hv-7g-rUT">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="NxP-Sa-8wt">
                             <color key="tintColor" red="0.85602962969999996" green="0.25023311380000002" blue="0.35205149650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="T8p-MG-iLf" id="3LG-7I-zX5"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="Ko4-En-yGw" id="QKM-Lk-XkL"/>
                         <outlet property="priceField" destination="9Kf-Kg-41S" id="O5W-AH-DvD"/>
                         <outlet property="storePicker" destination="ZaO-fZ-sNX" id="L5c-Iv-bef"/>
+                        <outlet property="thumImg" destination="gFy-GF-kEG" id="WXD-dL-OfG"/>
                         <outlet property="titleField" destination="szL-11-5cg" id="58T-YM-Xjv"/>
                     </connections>
                 </viewController>
