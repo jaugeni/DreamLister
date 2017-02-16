@@ -15,6 +15,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     @IBOutlet weak var segment: UISegmentedControl!
     
     var controller: NSFetchedResultsController<Item>!
+   // var controllerType: NSFetchedResultsController<ItemType>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let item = controller.object(at: indexPath as IndexPath)
         cell.configureCell(item: item)
+        
         
     }
     
@@ -90,6 +92,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         let priceSort = NSSortDescriptor(key: "price", ascending: true)
         let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        let typeSort = NSSortDescriptor(key: "toItemType", ascending: true)
         
         if segment.selectedSegmentIndex == 0 {
            
@@ -102,6 +105,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         } else if segment.selectedSegmentIndex == 2 {
             
             fetchRequest.sortDescriptors = [titleSort]
+            
+        } else if segment.selectedSegmentIndex == 3 {
+            
+            fetchRequest.sortDescriptors = [typeSort]
+            
         }
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -120,6 +128,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             print("\(error)")
             
         }
+        
     }
     
     @IBAction func segmentChange(_ sender: Any) {

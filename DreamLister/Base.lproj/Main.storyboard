@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hvo-Av-pUz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hvo-Av-pUz">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,6 +28,7 @@
                                     <segment title="Newest"/>
                                     <segment title="Price"/>
                                     <segment title="Title"/>
+                                    <segment title="Type"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -196,16 +197,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg4-yD-I19">
-                                <rect key="frame" x="161.66666666666666" y="262" width="91" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="nel-Ap-CU4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaO-fZ-sNX">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bnt-Za-lD2">
+                                <rect key="frame" x="20" y="262" width="374" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg4-yD-I19">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="nel-Ap-CU4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9M-wh-RAm">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="8Mi-zR-b1b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <pickerView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaO-fZ-sNX">
                                 <rect key="frame" x="20" y="291" width="374" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="wPc-mG-2hw"/>
@@ -246,18 +261,19 @@
                             <constraint firstItem="szL-11-5cg" firstAttribute="top" secondItem="ae2-JK-1mU" secondAttribute="bottom" constant="18" id="DOq-hF-NOD"/>
                             <constraint firstItem="gFy-GF-kEG" firstAttribute="top" secondItem="ae2-JK-1mU" secondAttribute="bottom" constant="8" id="IWY-1m-0N5"/>
                             <constraint firstItem="YaW-e0-j8o" firstAttribute="top" secondItem="76T-9Q-P5c" secondAttribute="bottom" constant="20" id="NCF-Th-JY3"/>
-                            <constraint firstItem="Mg4-yD-I19" firstAttribute="centerX" secondItem="BOX-5Q-VSn" secondAttribute="centerX" id="Q57-4s-QYM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ko4-En-yGw" secondAttribute="trailing" id="QLQ-aX-Em7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="szL-11-5cg" secondAttribute="trailing" id="RS5-n7-RIT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Kf-Kg-41S" secondAttribute="trailing" id="Ztd-hg-t2i"/>
-                            <constraint firstItem="Mg4-yD-I19" firstAttribute="top" secondItem="Ko4-En-yGw" secondAttribute="bottom" constant="20" id="cTg-O3-nIS"/>
                             <constraint firstItem="9Kf-Kg-41S" firstAttribute="top" secondItem="szL-11-5cg" secondAttribute="bottom" constant="10" id="dQd-Le-qRL"/>
+                            <constraint firstItem="ZaO-fZ-sNX" firstAttribute="top" secondItem="bnt-Za-lD2" secondAttribute="bottom" constant="8" id="eLL-bE-oBy"/>
+                            <constraint firstItem="bnt-Za-lD2" firstAttribute="top" secondItem="Ko4-En-yGw" secondAttribute="bottom" constant="20" id="fmD-2g-GQI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZaO-fZ-sNX" secondAttribute="trailing" id="gZG-gx-33r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bnt-Za-lD2" secondAttribute="trailing" id="hTC-xR-V0y"/>
                             <constraint firstItem="gFy-GF-kEG" firstAttribute="leading" secondItem="BOX-5Q-VSn" secondAttribute="leadingMargin" id="iaJ-v0-p49"/>
                             <constraint firstItem="76T-9Q-P5c" firstAttribute="trailing" secondItem="BOX-5Q-VSn" secondAttribute="trailingMargin" id="mFw-eS-nNx"/>
                             <constraint firstItem="76T-9Q-P5c" firstAttribute="leading" secondItem="BOX-5Q-VSn" secondAttribute="leadingMargin" id="tMu-aJ-lGp"/>
+                            <constraint firstItem="bnt-Za-lD2" firstAttribute="leading" secondItem="BOX-5Q-VSn" secondAttribute="leadingMargin" id="xHF-cV-EHo"/>
                             <constraint firstItem="Ko4-En-yGw" firstAttribute="leading" secondItem="BOX-5Q-VSn" secondAttribute="leadingMargin" id="yEJ-Cq-Jgq"/>
-                            <constraint firstItem="ZaO-fZ-sNX" firstAttribute="top" secondItem="Mg4-yD-I19" secondAttribute="bottom" constant="8" id="zHa-aV-7pP"/>
                             <constraint firstItem="ZaO-fZ-sNX" firstAttribute="leading" secondItem="BOX-5Q-VSn" secondAttribute="leadingMargin" id="zwa-6B-PT0"/>
                         </constraints>
                     </view>
@@ -272,9 +288,11 @@
                     <connections>
                         <outlet property="detailsField" destination="Ko4-En-yGw" id="QKM-Lk-XkL"/>
                         <outlet property="priceField" destination="9Kf-Kg-41S" id="O5W-AH-DvD"/>
+                        <outlet property="storeLbl" destination="Mg4-yD-I19" id="j23-TF-kFR"/>
                         <outlet property="storePicker" destination="ZaO-fZ-sNX" id="L5c-Iv-bef"/>
                         <outlet property="thumImg" destination="gFy-GF-kEG" id="WXD-dL-OfG"/>
                         <outlet property="titleField" destination="szL-11-5cg" id="58T-YM-Xjv"/>
+                        <outlet property="typeItemLbl" destination="Y9M-wh-RAm" id="UJq-RC-Pl7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBr-N1-CKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
