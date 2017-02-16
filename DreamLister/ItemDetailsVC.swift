@@ -24,9 +24,6 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     var stores = [Store]()
     var types = [ItemType]()
     
-    var storeString = [String]()
-    var typeString = [String]()
-    
     var pickerViewData = [[String](), [String]()]
     
     var itemToEdit: Item?
@@ -79,16 +76,13 @@ class ItemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         getStores()
         
         for store in stores {
-            storeString.append(store.name!)
+            pickerViewData[0].append(store.name!)
         }
         
         for type in types {
-            typeString.append(type.type!)
+            pickerViewData[1].append(type.type!)
         }
-        
-        
-        
-        pickerViewData = [storeString, typeString]
+
         
         if itemToEdit != nil {
             loadItemData()
